@@ -1,0 +1,30 @@
+<app-header></app-header>
+
+<h2 style="text-decoration: underline; text-align: center; margin-top: 40px;">Transactions</h2>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <table class="table table-bordered">
+                <thead class="thead-dark">
+                    <tr>
+                        <th style="background-color: black;">Payment ID</th>
+                        <th style="background-color: black;">Payment Type</th>
+                        <th style="background-color: black;">Bill Amount</th>
+                        <th style="background-color: black;">Paid Date</th>
+                        <th style="background-color: black;">Bill ID</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let transaction of transactions">
+                        <td> {{transaction.paymentId}}</td>
+                        <td> {{transaction.paymentType}}</td>
+                        <td> {{transaction.billAmount}}</td>
+                        <td> {{transaction.paidDate}}</td>
+                        <td> {{transaction.billId}}</td>
+                    </tr>
+                    <!-- Add more rows for additional data -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

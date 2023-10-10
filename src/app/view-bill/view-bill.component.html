@@ -1,0 +1,77 @@
+<app-header></app-header>
+<div class="container mt-5" #content>
+    <div class="row">
+        <div class="col-12">
+            <!-- PDF header -->
+            <div class="bg-secondary text-white p-3">
+                <h1 class="text-center">Bharat Bijili</h1>
+            </div>
+        </div>
+    </div>
+    <div class="row" >
+        <div class="col-12">
+            <div class="border p-3">
+
+                <div class="container mt-5">
+                    <h1 class="text-center">Billing Invoice</h1>
+                    <table class="table table-bordered" id="table">
+                        <tbody>
+                            <tr>
+                                <th>Bill ID</th>
+                                <td>{{ billtopay.billId }}</td>
+                            </tr>
+                            <tr>
+                                <th>Customer Name</th>
+                                <td>{{ billtopay.customerName }}</td>
+                            </tr>
+                            <tr>
+                                <th>Customer ID</th>
+                                <td>{{ billtopay.customerId }}</td>
+                            </tr>
+                            <tr>
+                                <th>Unit Consumed</th>
+                                <td>{{ billtopay.unitConsumed }} KW</td>
+                            </tr>
+                            <tr>
+                                <th>Bill Start Date</th>
+                                <td>{{ billtopay.billStartDate | date: 'mediumDate' }}</td>
+                            </tr>
+                            <tr>
+                                <th>Bill Due Date</th>
+                                <td>{{ billtopay.billDueDate | date: 'mediumDate' }}</td>
+                            </tr>
+                            <tr>
+                                <th>Email</th>
+                                <td>{{ billtopay.email }}</td>
+                            </tr>
+                            <tr>
+                                <th>Telephone</th>
+                                <td>{{ billtopay.telephone }}</td>
+                            </tr>
+                            <tr>
+                                <th>Bill Status</th>
+                                <td>{{ billtopay.billStatus }}{{(billtopay.billStatus=="paid")?"(Online)":""}}</td>
+                            </tr>
+                            <tr>
+                                <th>Before Due Date Amout</th>
+                                <td>{{invoiceinfo.beforeDueDateAmout|currency:'INR'}}</td>
+                            </tr>
+                            <tr>
+                                <th>After Due Date Amout</th>
+                                <td>{{invoiceinfo.afterDueDateAmout|currency:'INR'}}</td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                    <p style="margin-left: 300px; font-weight: bold;">{{(billtopay.billStatus=="pending")?"pay online to get 5% discount":""}}</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div>
+    <button type="button" class="btn btn-secondary" style="margin-left: 40%; margin-top: 30px; width: 100px;" (click)="goBack()">Back</button>
+    <button type="button" class="btn btn-secondary" style="margin-left: 50%; margin-top: -67px; width: 100px;" (click)="downloadBill()">download</button>
+</div>

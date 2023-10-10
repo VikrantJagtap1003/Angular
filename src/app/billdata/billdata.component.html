@@ -1,0 +1,60 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+            <!-- Left Section for Table -->
+            <h2> Electric Bills</h2>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>BillId</th>
+                        <th>Unit Cunsumed in KW</th>
+                        <th>Bill Due Date</th>
+                        <th>Bill Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let bill of homepageviewdata">
+                        <td>{{bill.billId}}</td>
+                        <td>{{bill.unitConsumed}}</td>
+                        <td>{{bill.billDueDate}}</td>
+                        <td>{{bill.billStatus}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div style="display: flex; justify-content: space-between;">
+                <button type="button" (click)="toDetails()" class="btn btn-dark" style="margin-left: 20px;"> Bill details</button>
+                <button type="button" class="btn btn-dark" style="margin-right: 20px;" (click)="transactionDetails()">Transactions</button>
+            </div>
+           
+        </div>
+        <div class="col-md-6" id="info-container">
+            <!-- Image Section -->
+            
+            <!-- Right Section for Information -->
+            <div id="info">
+                <img src="../../assets/bharat bigili.jpg" alt="Bharat Bijlee Logo" id="company-image">
+    
+                <h2 style="text-shadow: 2px 1px 5px;">Bharat Bijili </h2>
+                <p>Bharat Bijili (BSE: 503960, NSE: BBL) is a pioneer in electrical engineering in India, and one of the
+                    most trusted names in the industry today. Established in 1946, the company has two primary business
+                    segments: Power Systems that comprise Transformers and Projects divisions, and Industrial Systems
+                    segment comprising Electric Motors, Drives & Industrial Automation and Elevator Systems divisions.
+    
+                    <!-- Rest of your content -->
+                </p>
+            </div>
+        </div>
+
+</div>
+<footer class="footer">
+    <div class="container">
+        <!-- Social Media Icons -->
+        <a href="#" class="social-icons"><i class="fa fa-facebook"></i></a>
+        <a href="#" class="social-icons"><i class="fa fa-twitter"></i></a>
+        <a href="#" class="social-icons"><i class="fa fa-instagram"></i></a>
+        <a href="#" class="social-icons"><i class="fa fa-linkedin"></i></a>
+    </div>
+    <div class="container">
+        <p>&copy; 2023 Your Company. All rights reserved.</p>
+    </div>
+</footer>

@@ -1,0 +1,14 @@
+#table{
+    max-width: 2480px;
+    width: 800px;
+    margin-left: 120px;
+}
+
+#table td{
+    width: auto;
+    overflow: hidden;
+    word-wrap: break-word;
+}
+#table th{
+    width: 400px;
+}

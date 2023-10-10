@@ -1,0 +1,35 @@
+<app-header></app-header>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <h2 style="margin-top: 30px; text-align: center; text-decoration: underline;"> Electric Bills</h2>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                         <th>BillId</th>
+                        <th>Unit Cunsumed in KW</th>
+                        <th>Bill Start Date</th>
+                        <th>Bill Due Date</th>
+                        <th>Bill Status</th>
+                        <th>Action</th>
+                        <th>View</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let bill of billdata">
+                        <td>{{bill.billId}}</td>
+                        <td>{{bill.unitConsumed}}</td>
+                        <td>{{bill.billStartDate|date:'mediumDate'}}</td>
+                        <td>{{bill.billDueDate|date:'mediumDate'}}</td>
+                        <td>{{bill.billStatus}}</td>
+                        <td>
+                            <button *ngIf="bill.billStatus === 'pending'" (click)="payBill(bill.billId)" type="button" class="btn btn-success" style="width: 100px;">Pay Bill</button>
+                            <h6 *ngIf="bill.billStatus === 'paid'">Thank You</h6>
+                        </td>
+                        <td><button type="button" class="btn btn-info" (click)="showBill(bill.billId)">show bill</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
